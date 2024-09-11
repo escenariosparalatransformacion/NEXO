@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intercambio sobre el Enfoque Nexo</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --accent-color: #e74c3c;
+            --text-color: #34495e;
+            --background-color: #ecf0f1;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--background-color);
+        }
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+        .tab {
+            overflow: hidden;
+            border: 1px solid var(--primary-color);
+            background-color: #fff;
+            border-radius: 5px 5px 0 0;
+        }
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+            color: var(--text-color);
+        }
+        .tab button:hover {
+            background-color: var(--background-color);
+        }
+        .tab button.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border: 1px solid var(--primary-color);
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+            background-color: #fff;
+            animation: fadeEffect 1s;
+        }
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .timeline-item {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+            padding: 15px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 5px;
+            margin: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            cursor: pointer; /* Make timeline items clickable */
+        }
+        .icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .quiz-question {
+            background-color: #f9f9f9;
+            border-left: 5px solid var(--accent-color);
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+        }
+        .quiz-option {
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .quiz-option:hover {
+            background-color: #d0d0d0;
+        }
+        .quiz-option.correct {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        .quiz-option.incorrect {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        .quiz-feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .slide {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+        .slide h3 {
+            color: var(--primary-color);
+        }
+        .slide-content {
+            display: flex;
+            justify-content: space-between;
+        }
+        .slide-text {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .slide-image {
+            flex: 1;
+            text-align: center;
+        }
+        .slide-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .glossary-term {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .glossary-definition {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        .document-link {
+            color: var(--primary-color);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .document-content {
+            display: none;
+            margin-left: 20px;
+            border-left: 3px solid var(--secondary-color);
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: var(--background-color);
+        }
+    </style>
+</head>
+<body>
+    <h1>Intercambio sobre el Enfoque Nexo</h1>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Resumen')">📋 Resumen</button>
+        <button class="tablinks" onclick="openTab(event, 'Cronograma')">⏱️ Cronograma</button>
+        <button class="tablinks" onclick="openTab(event, 'Quiz')">❓ Quiz</button>
+        <button class="tablinks" onclick="openTab(event, 'RefresherNexo')">🔄 Refresher Nexo</button>
+        <button class="tablinks" onclick="openTab(event, 'HojaRuta')">🗺️ Hoja de Ruta</button>
+        <button class="tablinks" onclick="openTab(event, 'Convergencia')">🎯 Zonas de Convergencia</button>
+        <button class="tablinks" onclick="openTab(event, 'Localizacion')">🌍 Localización</button>
+        <button class="tablinks" onclick="openTab(event, 'Glosario')">📖 Glosario</button>
+    </div>
+
+    <div id="Resumen" class="tabcontent">
+        <h2>📋 Resumen del Intercambio</h2>
+        <p>Este intercambio de 2:30 horas está diseñado para profundizar en el enfoque Nexo, una estrategia que busca fortalecer la colaboración entre actores humanitarios, de desarrollo y de paz. A través de una combinación de elementos teóricos y prácticos, los participantes explorarán cómo implementar este enfoque en sus contextos específicos.</p>
+        <p>El intercambio abarca desde la comprensión básica del concepto Nexo hasta su aplicación práctica en municipios priorizados, incluyendo aspectos de financiación y coordinación interagencial. Los participantes tendrán la oportunidad de discutir casos reales, compartir experiencias y desarrollar estrategias concretas para la implementación del enfoque Nexo en sus áreas de trabajo.</p>
+    </div>
+
+    <div id="Cronograma" class="tabcontent">
+        <h2>⏱️ Cronograma del Intercambio</h2>
+        <div class="timeline">
+            <div class="timeline-item" onclick="openTab(event, 'Quiz')">
+                <div class="icon">🚀</div>
+                <h3>20 min</h3>
+                <p>Introducción y Quiz Inicial</p>
+            </div>
+            <div class="timeline-item" onclick="openTab(event, 'RefresherNexo')">
+                <div class="icon">🔄</div>
+                <h3>30 min</h3>
+                <p>Refresher Triple Nexo</p>
+            </div>
+            <div class="timeline-item" onclick="openTab(event, 'HojaRuta')">
+                <div class="icon">🗺️</div>
+                <h3>25 min</h3>
+                <p>Revisión Hoja de Ruta Mayo 2023</p>
+            </div>
+            <div class="timeline-item" onclick="openTab(event, 'Convergencia')">
+                <div class="icon">🎯</div>
+                <h3>30 min</h3>
+                <p>Enfoque de Zonas de Convergencias</p>
+            </div>
+            <div class="timeline-item" onclick="openTab(event, 'Localizacion')">
+                <div class="icon">🌍</div>
+                <h3>30 min</h3>
+                <p>Agenda de Localización</p>
+            </div>
+            <div class="timeline-item">
+                <div class="icon">💡</div>
+                <h3>15 min</h3>
+                <p>Conclusiones y Próximos Pasos</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="Quiz" class="tabcontent">
+        <h2>❓ Quiz Inicial</h2>
+        <div id="quiz-container"></div>
+    </div>
+
+    <div id="RefresherNexo" class="tabcontent">
+        <h2>🔄 Refresher Triple Nexo</h2>
+
+        <div class="slide">
+            <h3>Prueba sorpresa HDP Nexus</h3>
+            <div class="slide-text">
+                <p>Antes de comenzar, te invitamos a realizar una prueba rápida para evaluar tu conocimiento del enfoque Nexo. Esta prueba no tiene calificación, su objetivo es ayudarte a identificar áreas donde podrías profundizar tu comprensión. <span class="document-link" onclick="toggleDocument('prueba-nexo')">Nexos Versión 1.pdf (Diapositivas 7-12)</span></p>
+                <div class="document-content" id="prueba-nexo">
+                    <p>Contenido del documento Nexos Versión 1.pdf, Diapositivas 7-12</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h3>¿Por qué el HDP Nexus?</h3>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <p>El enfoque Nexo se ha vuelto crucial en el panorama actual de crisis humanitarias y desafíos de desarrollo. Hay varias razones por las que este enfoque es fundamental: <span class="document-link" onclick="toggleDocument('por-que-nexo')">Nexos Versión 1.pdf (Diapositiva 13)</span></p>
+                    <div class="document-content" id="por-que-nexo">
+                        <p>Contenido del documento Nexos Versión 1.pdf, Diapositiva 13</p>
+                    </div>
+                    <ol>
+                        <li><strong>Las crisis son cada vez más complejas:</strong> Los conflictos, el cambio climático y otras crisis están creando desafíos interconectados que requieren soluciones integrales.</li>
+                        <li><strong>Los recursos son limitados:</strong> La financiación humanitaria y de desarrollo no es suficiente para abordar todas las necesidades. El enfoque Nexo busca maximizar el impacto de los recursos disponibles.</li>
+                        <li><strong>La necesidad de sostenibilidad:</strong> Las soluciones a corto plazo no son suficientes. El enfoque Nexo busca abordar las causas profundas de las crisis y construir resiliencia a largo plazo.</li>
+                    </ol>
+                </div>
+                <div class="slide-image">
+                    <p><a href="https://ibb.co/PCNR29T"><img src="https://i.ibb.co/vzHbNQs/image.png" alt="image" border="0"></a></p>
+                    <!-- <img src="" alt="Imagen que representa los desafíos del HDP Nexus"> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h3>¿Qué es un enfoque nexo?</h3>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <p>Un enfoque Nexo busca reforzar la colaboración, coherencia y complementariedad entre los actores humanitarios, de desarrollo y de paz para reducir necesidades y vulnerabilidades. <span class="document-link" onclick="toggleDocument('que-es-nexo')">Nexos Versión 1.pdf (Diapositiva 15)</span></p>
+                    <div class="document-content" id="que-es-nexo">
+                        <p>Contenido del documento Nexos Versión 1.pdf, Diapositiva 15</p>
+                    </div>
+                    <p>Implica trabajar de manera conjunta para:</p>
+                    <ul>
+                        <li><strong>Abordar las causas profundas de las crisis:</strong> No solo responder a las necesidades inmediatas, sino también trabajar en la prevención y la construcción de resiliencia.</li>
+                        <li><strong>Maximizar el impacto de los recursos:</strong> Asegurar que la financiación humanitaria y de desarrollo se utiliza de manera efectiva y eficiente.</li>
+                        <li><strong>Lograr resultados sostenibles:</strong> Promover soluciones a largo plazo que aborden los desafíos humanitarios, de desarrollo y de paz de manera integral.</li>
+                    </ul>
+                </div>
+                <div class="slide-image">
+                    <p><a href="https://imgbb.com/"><img src="https://i.ibb.co/9YNNfDc/image.png" alt="image" border="0"></a></p>
+                    <!-- <img src="" alt="Diagrama del enfoque nexo"> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h3>Paz en el HDP</h3>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <p>La paz es un componente esencial del enfoque Nexo. No se puede lograr un desarrollo sostenible sin paz, y la paz es fundamental para una respuesta humanitaria efectiva. <span class="document-link" onclick="toggleDocument('paz-hdp')">Nexos Versión 1.pdf (Diapositiva 16)</span></p>
+                    <div class="document-content" id="paz-hdp">
+                        <p>Contenido del documento Nexos Versión 1.pdf, Diapositiva 16</p>
+                    </div>
+                    <p>El enfoque Nexo busca integrar la construcción de paz en todas las etapas de la respuesta a las crisis, desde la prevención hasta la recuperación.</p>
+                    <p>Esto implica trabajar en:</p>
+                    <ul>
+                        <li><strong>Prevención de conflictos:</strong> Abordar las causas profundas de los conflictos y promover la resolución pacífica de las disputas.</li>
+                        <li><strong>Protección de civiles:</strong> Asegurar la seguridad de las poblaciones afectadas por los conflictos.</li>
+                        <li><strong>Reconciliación y construcción de paz:</strong> Promover la cohesión social y la reconstrucción de comunidades después de los conflictos.</li>
+                    </ul>
+                </div>
+                <div class="slide-image">
+                    <p><a href="https://ibb.co/StwC4sg"><img src="https://i.ibb.co/wShmF0q/image.png" alt="image" border="0"></a></p>
+                    <!-- <img src="" alt="Imagen que representa la paz en el contexto humanitario, de desarrollo y de paz"> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h3>Recomendación del CAD-OCDE sobre el nexo HDP</h3>
+            <div class="slide-text">
+                <p>La Recomendación del Comité de Asistencia para el Desarrollo (CAD) de la Organización para la Cooperación y el Desarrollo Económicos (OCDE) sobre el nexo HDP, adoptada en 2019, es un marco clave para la implementación del enfoque Nexo. <span class="document-link" onclick="toggleDocument('recomendacion-cad')">Nexos Versión 1.pdf (Diapositiva 19)</span></p>
+                <div class="document-content" id="recomendacion-cad">
+                    <p>Contenido del documento Nexos Versión 1.pdf, Diapositiva 19</p>
+                </div>
+                <p>Esta recomendación establece 11 principios para guiar la acción de los países miembros del CAD en relación con el enfoque Nexo:</p>
+                <ol>
+                    <li>Liderazgo y apropiación nacional</li>
+                    <li>Análisis conjunto de riesgos y vulnerabilidades</li>
+                    <li>Priorizar la prevención, la mediación y la construcción de la paz</li>
+                    <li>Las personas en el centro</li>
+                    <li>"No hacer daño"</li>
+                    <li>Alinear la programación con el riesgo</li>
+                    <li>Fortalecer las capacidades nacionales y locales</li>
+                    <li>Financiación predecible, flexible y plurianual</li>
+                    <li>Invertir en aprendizaje y evidencia</li>
+                    <li>Compromiso político sostenido</li>
+                    <li>Rendición de cuentas mutua</li>
+                </ol>
+                <p>La Recomendación del CAD-OCDE proporciona un marco integral para la implementación del enfoque Nexo, abarcando desde la planificación hasta la financiación y la evaluación.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h3>Elementos del Enfoque Nexus del HDP</h3>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <p>El enfoque Nexo del HDP se basa en tres elementos clave: <span class="document-link" onclick="toggleDocument('elementos-nexo')">Nexos Versión 1.pdf (Diapositivas 20-21)</span></p>
+                    <div class="document-content" id="elementos-nexo">
+                        <p>Contenido del documento Nexos Versión 1.pdf, Diapositivas 20-21</p>
+                    </div>
+                    <ol>
+                        <li><strong>Coordinación:</strong> Es fundamental una estrecha colaboración entre los actores humanitarios, de desarrollo y de paz para garantizar una respuesta coordinada y coherente.</li>
+                        <li><strong>Programación:</strong> La programación debe ser integrada, abordando las necesidades humanitarias, de desarrollo y de paz de manera holística.</li>
+                        <li><strong>Financiación:</strong> La financiación debe ser flexible y predecible para permitir una respuesta efectiva y sostenible.</li>
+                    </ol>
+                </div>
+                <div class="slide-image">
+                    <p><a href="https://ibb.co/28vV9Lx"><img src="https://i.ibb.co/HNtwSM6/image.png" alt="image" border="0"></a></p>
+                    <!-- <img src="" alt="Imagen que representa los elementos del enfoque Nexo"> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h3>Financiación "Nexus"</h3>
+            <div class="slide-text">
+                <p>La financiación del enfoque Nexo requiere un cambio de paradigma. Es necesario alejarse de la financiación en silos y avanzar hacia una financiación más flexible, predecible y plurianual. <span class="document-link" onclick="toggleDocument('financiacion-nexo')">Nexos Versión 1.pdf (Diapositivas 22-25)</span></p>
+                <div class="document-content" id="financiacion-nexo">
+                    <p>Contenido del documento Nexos Versión 1.pdf, Diapositivas 22-25</p>
+                </div>
+                <p>Algunas estrategias clave para la financiación "Nexus" incluyen:</p>
+                <ul>
+                    <li><strong>Financiación conjunta:</strong> Agrupar recursos de diferentes donantes para financiar programas integrales.</li>
+                    <li><strong>Financiación flexible:</strong> Permitir que los fondos se utilicen para diferentes propósitos, según las necesidades cambiantes del contexto.</li>
+                    <li><strong>Financiación a largo plazo:</strong> Proporcionar financiación predecible durante varios años para apoyar programas sostenibles.</li>
+                    <li><strong>Movilización de recursos nacionales:</strong> Fomentar la participación de los gobiernos y el sector privado en la financiación del enfoque Nexo.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h3>Acción Humanitaria en el HDP</h3>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <p>La acción humanitaria es un componente vital del enfoque Nexo. En situaciones de crisis, la prioridad es salvar vidas y aliviar el sufrimiento. Sin embargo, la acción humanitaria también debe contribuir a la resiliencia a largo plazo y al desarrollo sostenible.</p>
+                    <p>El enfoque Nexo busca integrar la acción humanitaria en una estrategia más amplia que aborde las causas profundas de las crisis y promueva la paz y el desarrollo.</p>
+                    <p>Esto implica:</p>
+                    <ul>
+                        <li><strong>Vinculación con el desarrollo:</strong> Asegurar que la acción humanitaria se coordine con los esfuerzos de desarrollo para evitar duplicaciones y maximizar el impacto.</li>
+                        <li><strong>Sensibilidad al conflicto:</strong> Considerar las dinámicas de conflicto en la planificación e implementación de la acción humanitaria.</li>
+                        <li><strong>Fortalecimiento de la resiliencia:</strong> Apoyar a las comunidades afectadas por crisis para que puedan recuperarse y reconstruir sus vidas.</li>
+                    </ul>
+                </div>
+                <div class="slide-image">
+                    <p><a href="https://ibb.co/xM9thtS"><img src="https://i.ibb.co/Jz6wnwR/image.png" alt="image" border="0"></a></p>
+                    <!-- <img src="" alt="Imagen que representa la acción humanitaria en el HDP Nexus"> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h3>Desarrollo en el HDP</h3>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <p>El desarrollo es un proceso a largo plazo que busca mejorar las condiciones económicas, sociales y ambientales de una sociedad. En el contexto del enfoque Nexo, el desarrollo no se ve como un objetivo separado, sino como un componente integral de la respuesta a las crisis.</p>
+                    <p>El enfoque Nexo busca integrar el desarrollo en todas las etapas de la respuesta a las crisis, desde la prevención hasta la recuperación.</p>
+                    <p>Esto implica:</p>
+                    <ul>
+                        <li><strong>Abordar las causas profundas de las crisis:</strong> Invertir en desarrollo para reducir la vulnerabilidad a las crisis y promover la paz y la estabilidad.</li>
+                        <li><strong>Fortalecimiento de los sistemas:</strong> Apoyar el desarrollo de instituciones y sistemas resilientes que puedan hacer frente a las crisis.</li>
+                        <li><strong>Promoción del desarrollo inclusivo y sostenible:</strong> Asegurar que los beneficios del desarrollo lleguen a todos los miembros de la sociedad y que el desarrollo no comprometa el medio ambiente.</li>
+                    </ul>
+                </div>
+                <div class="slide-image">
+                    <p><a href="https://ibb.co/p4zYq8S"><img src="https://i.ibb.co/KVqTnkJ/image.png" alt="image" border="0"></a></p>
+                    <!-- <img src="" alt="Imagen que representa el desarrollo en el HDP Nexus"> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="HojaRuta" class="tabcontent">
+        <h2>🗺️ Hoja de Ruta del Taller Triple Nexo (Mayo 2023)</h2>
+
+        <h3>Contexto <span class="document-link" onclick="toggleDocument('taller-contexto')">Taller Nexo CCT Mcbo.pdf (Diapositiva 2)</span></h3>
+        <div class="document-content" id="taller-contexto">
+            <p>Contenido del documento Taller Nexo CCT Mcbo.pdf, Diapositiva 2</p>
+        </div>
+        <p>El taller de mayo 2023 tuvo como objetivo revisar el estado actual de la coordinación, planificación y programación del enfoque Nexo en el contexto específico del trabajo del CCT Maracaibo. Se realizó un diagnóstico de la situación actual, identificando fortalezas, debilidades y oportunidades para mejorar la implementación del enfoque Nexo.</p>
+
+        <h3>Hallazgos <span class="document-link" onclick="toggleDocument('taller-hallazgos')">Taller Nexo CCT Mcbo.pdf (Diapositiva 3)</span></h3>
+        <div class="document-content" id="taller-hallazgos">
+            <p>Contenido del documento Taller Nexo CCT Mcbo.pdf, Diapositiva 3</p>
+        </div>
+        <p>Los principales hallazgos del taller de mayo 2023 fueron:</p>
+        <ul>
+            <li>**Conciencia del enfoque Nexo:** Los participantes demostraron un buen conocimiento general del enfoque Nexo y su importancia.</li>
+            <li>**Necesidad de mayor coordinación:** Se identificó la necesidad de mejorar la coordinación entre los actores humanitarios, de desarrollo y de paz para una implementación más efectiva del enfoque Nexo.</li>
+            <li>**Importancia de la planificación conjunta:** Se destacó la necesidad de desarrollar planes de acción conjuntos que integren los tres pilares del enfoque Nexo.</li>
+            <li>**Retos en la financiación:** La financiación del enfoque Nexo sigue siendo un desafío, especialmente en términos de flexibilidad y predictibilidad.</li>
+        </ul>
+
+        <h3>Hoja de Ruta a Corto y Largo Plazo <span class="document-link" onclick="toggleDocument('taller-hoja-ruta')">Taller Nexo CCT Mcbo.pdf (Diapositivas 4-5)</span></h3>
+        <div class="document-content" id="taller-hoja-ruta">
+            <p>Contenido del documento Taller Nexo CCT Mcbo.pdf, Diapositivas 4-5</p>
+        </div>
+        <p>Con base en los hallazgos del taller, se propuso una hoja de ruta con acciones a corto y largo plazo para fortalecer la implementación del enfoque Nexo:</p>
+
+        <h4>Acciones a Corto Plazo (Próximos 6 Meses):</h4>
+        <ul>
+            <li>Establecer un mecanismo de coordinación interagencial dedicado al enfoque Nexo.</li>
+            <li>Desarrollar un plan de acción conjunto para la implementación del enfoque Nexo en el área de trabajo del CCT Maracaibo.</li>
+            <li>Identificar y documentar buenas prácticas de implementación del enfoque Nexo.</li>
+            <li>Realizar una capacitación sobre el enfoque Nexo para todos los actores relevantes.</li>
+        </ul>
+
+        <h4>Acciones a Largo Plazo (Próximos 2 Años):</h4>
+        <ul>
+            <li>Integrar el enfoque Nexo en los marcos estratégicos de todas las agencias participantes.</li>
+            <li>Abogar por una mayor financiación flexible y predecible para el enfoque Nexo.</li>
+            <li>Desarrollar mecanismos de monitoreo y evaluación para el enfoque Nexo.</li>
+            <li>Promover el intercambio de conocimientos y la creación de redes entre actores que implementan el enfoque Nexo.</li>
+        </ul>
+    </div>
+
+    <div id="Convergencia" class="tabcontent">
+        <h2>🎯 Enfoque de Zonas de Convergencias</h2>
+
+        <h3>Plan de Trabajo del GIN (Segundo Semestre de 2024) <span class="document-link" onclick="toggleDocument('plan-trabajo-gin')">20240806_Avances del Grupo Interagencial de Nexo GIN.pdf (Diapositiva 2)</span></h3>
+        <div class="document-content" id="plan-trabajo-gin">
+            <p>Contenido del documento 20240806_Avances del Grupo Interagencial de Nexo GIN.pdf, Diapositiva 2</p>
+        </div>
+        <p>El Grupo Interagencial de Nexo (GIN) ha desarrollado un plan de trabajo para el segundo semestre de 2024, que incluye las siguientes actividades:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tarea</th>
+                    <th>Julio</th>
+                    <th>Agosto</th>
+                    <th>Septiembre</th>
+                    <th>Octubre</th>
+                    <th>Noviembre</th>
+                    <th>Diciembre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Zonas de Convergencia</td>
+                    <td>Identificación de municipios y agencias líderes</td>
+                    <td>Mapeo & análisis conjunto</td>
+                    <td>Explorar sinergias de nexo con proyectos existentes y desarrollar iniciativas piloto</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Dimensión de Paz del Triple Nexo</td>
+                    <td></td>
+                    <td>Análisis de oportunidades y reunión GIN dedicada</td>
+                    <td></td>
+                    <td>Integrar el componente de paz en el enfoque por zonas de convergencia</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Abogacía y comunicación</td>
+                    <td></td>
+                    <td>Definir narrativa de nexo post-elecciones</td>
+                    <td></td>
+                    <td></td>
+                    <td>Consolidación y difusión a agencias y socios</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Movilización de recursos</td>
+                    <td></td>
+                    <td>Evaluar oportunidades post-elecciones</td>
+                    <td></td>
+                    <td></td>
+                    <td>Alcance a donantes e IFIs</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Desarrollo de capacidades</td>
+                    <td>Definir capacitación y apoyo operativo por la Nexus Academy</td>
+                    <td></td>
+                    <td>Taller de la Nexus Academy</td>
+                    <td></td>
+                    <td></td>
+                    <td>Desarrollo de capacidades de agencias, clusters y otros actores/foros</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Criterios de priorización para zonas de convergencia <span class="document-link" onclick="toggleDocument('criterios-convergencia')">20240806_Avances del Grupo Interagencial de Nexo GIN.pdf (Diapositiva 3)</span></h3>
+        <div class="document-content" id="criterios-convergencia">
+            <p>Contenido del documento 20240806_Avances del Grupo Interagencial de Nexo GIN.pdf, Diapositiva 3</p>
+        </div>
+        <p>Para seleccionar las zonas de convergencia, el GIN ha establecido 15 criterios que se utilizan para evaluar la idoneidad de los municipios:</p>
+        <ol>
+            <li>PIN – Personas con necesidades humanitarias (HRP)</li>
+            <li>Nivel de severidad de las necesidades humanitarias (HRP)</li>
+            <li>Acceso/situación de seguridad</li>
+            <li>Presencia de actores HDP (principalmente humanitarios y de desarrollo)</li>
+            <li>Capacidad técnica, financiera y operacional de las agencias</li>
+            <li>Coordinación e articulación interagencial</li>
+            <li>Cooperación, interés y apertura de autoridades locales y estadales</li>
+            <li>Nivel de colaboración entre todos actores (ONU/ONGs/INGOs/instituciones-gobierno)</li>
+            <li>Priorización de áreas temáticas (prioridades nacionales, locales y del UNCT)</li>
+            <li>Presencia previa de iniciativas de nexo</li>
+            <li>Posibilidad de obtener líneas de base y efectuar el monitoreo</li>
+            <li>Dinámicas de movilidad humana (salidas, entradas, reintegración)</li>
+            <li>Presencia de comunidades indígenas</li>
+            <li>Nivel de severidad en violencia basada en género (VBG)</li>
+            <li>Proyectos CERF & VHF existentes</li>
+        </ol>
+
+        <h3>Criterios de priorización por municipio <span class="document-link" onclick="toggleDocument('criterios-municipio')">20240806_Avances del Grupo Interagencial de Nexo GIN.pdf (Diapositiva 4)</span></h3>
+        <div class="document-content" id="criterios-municipio">
+            <p>Contenido del documento 20240806_Avances del Grupo Interagencial de Nexo GIN.pdf, Diapositiva 4</p>
+        </div>
+        <p>Cada municipio es evaluado según los 15 criterios establecidos. La siguiente tabla muestra un ejemplo de cómo se evalúan los municipios:</p>
+        <!-- (Insert table with municipality evaluation here) -->
+
+        <h3>Municipios priorizados para zonas de convergencia <span class="document-link" onclick="toggleDocument('municipios-priorizados')">20240806_Avances del Grupo Interagencial de Nexo GIN.pdf (Diapositiva 5)</span></h3>
+        <div class="document-content" id="municipios-priorizados">
+            <p>Contenido del documento 20240806_Avances del Grupo Interagencial de Nexo GIN.pdf, Diapositiva 5</p>
+        </div>
+        <p>Con base en la evaluación de los criterios de priorización, se han seleccionado los siguientes municipios como zonas de convergencia:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Estado</th>
+                    <th>Municipio</th>
+                    <th>Agencias Líderes</th>
+                    <th>Comentarios</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>MIRANDA</td>
+                    <td>Sucre</td>
+                    <td>ACNUR, OIM, ONU Mujeres, ONUSIDA, UNFPA, UNICEF, (PNUD)</td>
+                    <td>No priorizado por el HRP, proyectos FHV (salud)</td>
+                </tr>
+                <tr>
+                    <td>ZULIA</td>
+                    <td>Mara</td>
+                    <td>ACNUR, PNUD, FAO, OIM, UNFPA, UNICEF, (ONUDI)</td>
+                    <td>Posibilidad de vincular con Maracaibo</td>
+                </tr>
+                <tr>
+                    <td>BOLIVAR</td>
+                    <td>Gran Sabana</td>
+                    <td>ACNUR, OIM, UNICEF, FAO, OPS, UNFPA, (PNUD)</td>
+                    <td>Proyectos CERF y FHV (medios de vida), presencia de grupos armados</td>
+                </tr>
+                <tr>
+                    <td>TACHIRA</td>
+                    <td>San Cristóbal</td>
+                    <td>OIM, PNUD, ACNUR, UNFPA, (ONUDI)</td>
+                    <td>Nuevo acuerdo entre el PNUD y la Alcaldía</td>
+                </tr>
+                <tr>
+                    <td>ZULIA</td>
+                    <td>Guajira</td>
+                    <td>FAO, OIM, ACNUR, PMA, UNICEF, UNFPA, (ONUDI)</td>
+                    <td>Proyectos CERF y FHV</td>
+                </tr>
+                <tr>
+                    <td>MIRANDA</td>
+                    <td>Urdaneta</td>
+                    <td>UNFPA, PNUD, UNICEF, ACNUR</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <p>NB: OPS presente en todo el territorio nacional</p>
+    </div>
+
+    <div id="Localizacion" class="tabcontent">
+        <h2>🌍 Agenda de Localización</h2>
+
+        <h3>Multilingüismo entre los agentes clave <span class="document-link" onclick="toggleDocument('multilinguismo')">Nexos Versión 1.pdf (Diapositiva 29)</span></h3>
+        <div class="document-content" id="multilinguismo">
+            <p>Contenido del documento Nexos Versión 1.pdf, Diapositiva 29</p>
+        </div>
+        <div class="slide-content">
+            <div class="slide-text">
+                <p>Para lograr una localización efectiva del enfoque Nexo, es crucial fomentar la colaboración entre diversos actores:</p>
+                <ul>
+                    <li><strong>Líderes clave:</strong> Coordinador Residente/Coordinador Humanitario (RC/HC), Gobierno.</li>
+                    <li><strong>Entidades de coordinación:</strong> Oficina de Coordinación de Asuntos Humanitarios (OCHA), Oficina del Coordinador de Desarrollo (DCO), Programa de las Naciones Unidas para el Desarrollo (PNUD).</li>
+                    <li><strong>Actores operativos:</strong> Programa Mundial de Alimentos (PMA), Fondo de las Naciones Unidas para la Infancia (UNICEF), Alto Comisionado de las Naciones Unidas para los Refugiados (ACNUR).</li>
+                    <li><strong>Agentes bilaterales:</strong> Grandes donantes e instituciones financieras internacionales (IFIs).</li>
+                </ul>
+                <p>Además, se requieren habilidades sociales clave para una colaboración exitosa:</p>
+                <ul>
+                    <li>Apertura de espíritu</li>
+                    <li>Carisma</li>
+                    <li>Valentía para innovar</li>
+                    <li>Tolerancia al riesgo y al fracaso</li>
+                    <li>Expectativas realistas (pequeñas victorias)</li>
+                    <li>Capacidad de priorizar ("sacrificio" y decir "no")</li>
+                    <li>Orientación a resultados</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Marco de cooperación <span class="document-link" onclick="toggleDocument('marco-cooperacion')">20240806_Avances del Grupo Interagencial de Nexo GIN.pdf (Diapositiva 6)</span></h3>
+        <div class="document-content" id="marco-cooperacion">
+            <p>Contenido del documento 20240806_Avances del Grupo Interagencial de Nexo GIN.pdf, Diapositiva 6</p>
+        </div>
+        <p>El marco de cooperación para la implementación del enfoque Nexo en Venezuela se estructura en torno a las siguientes áreas de intervención:</p>
+        <ul>
+            <li><strong>Salud:</strong> VIH, Malaria, Tuberculosis, Salud Mental, Salud Sexual y Reproductiva, Inmunizaciones, ITS, Apoyo a servicios de red comunal.</li>
+            <li><strong>Educación:</strong> Educación Integral de la Sexualidad, Educación Intercultural Bilingüe, Formación Docente, Educación Digital, Atención integral para reinserción de NNA fuera de la escuela, Mejora de la calidad educativa en escuelas.</li>
+            <li><strong>Gestión de Riesgos:</strong> Sequía Agrícola en la Guajira Venezolana, Mitigación de riesgos de mujeres y niñas indígenas vulnerables.</li>
+            <li><strong>Sistema productivo inclusivo:</strong> Capacidad técnica y productiva en siete cadenas agro-industriales, Resiliencia Social y productiva.</li>
+            <li><strong>Sistemas Alimentarios:</strong> Seguridad Alimentaria y nutricional con enfoque de género.</li>
+            <li><strong>Mitigación al Cambio Climático:</strong> Uso sustentable en la cuenca del Río Caroní, Planificación Espacial Marina en el Golfo de Paria.</li>
+            <li><strong>Justicia y Seguridad Ciudadana:</strong> Derechos humanos, cohesión social, Derechos sexuales y reproductivos, Derecho a una vida libre de violencia, Movilidad humana.</li>
+        </ul>
+
+        <h3>Perfiles de municipios priorizados</h3>
+        
+        <div class="slide">
+            <h4>1. Municipio Sucre, Estado de Miranda <span class="document-link" onclick="toggleDocument('perfil-sucre')">20240806_Avances del Grupo Interagencial de Nexo GIN.pdf (Diapositivas 7-8)</span></h4>
+            <div class="document-content" id="perfil-sucre">
+                <p>Contenido del documento 20240806_Avances del Grupo Interagencial de Nexo GIN.pdf, Diapositivas 7-8</p>
+            </div>
+            <p>Personas alcanzadas: 37,3k</p>
+            <p>Organizaciones involucradas: ACNUR, OIM, ONU Mujeres, ONUSIDA, UNFPA, UNICEF, (PNUD), OPS, Alimenta La Solidaridad, ASEINC, Asociación Provida de Venezuela, ASONACOP, AVESA, AVESSOC, CECODAP, CF, COOPI, ENCILUZ.</p>
+            <p>Sectores de intervención:</p>
+            <ul>
+                <li>Educación</li>
+                <li>Sistemas Alimentarios</li>
+                <li>Salud (Programas VIH, Malaria y Tuberculosis)</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h4>2. Municipio Mara, Estado de Zulia <span class="document-link" onclick="toggleDocument('perfil-mara')">20240806_Avances del Grupo Interagencial de Nexo GIN.pdf (Diapositiva 9)</span></h4>
+            <div class="document-content" id="perfil-mara">
+                <p>Contenido del documento 20240806_Avances del Grupo Interagencial de Nexo GIN.pdf, Diapositiva 9</p>
+            </div>
+            <p>Personas alcanzadas: 21,5k</p>
+            <p>Organizaciones involucradas: ACNUR, PNUD, FAO, OIM, UNFPA, UNICEF, (ONUDI), OPS, unicef.</p>
+            <p>Sectores de intervención:</p>
+            <ul>
+                <li>Educación</li>
+                <li>Sistemas Alimentarios</li>
+                <li>Salud (Programas VIH, Malaria y Tuberculosis)</li>
+                <li>Gestión de Riesgos</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h4>3. Municipio Gran Sabana, Estado de Bolívar <span class="document-link" onclick="toggleDocument('perfil-gran-sabana')">20240806_Avances del Grupo Interagencial de Nexo GIN.pdf (Diapositiva 10)</span></h4>
+            <div class="document-content" id="perfil-gran-sabana">
+                <p>Contenido del documento 20240806_Avances del Grupo Interagencial de Nexo GIN.pdf, Diapositiva 10</p>
+            </div>
+            <p>Personas alcanzadas: 10,4k</p>
+            <p>Organizaciones involucradas: ACNUR, OIM, UNICEF, FAO, OPS, UNFPA, (PNUD), unicef.</p>
+            <p>Sectores de intervención:</p>
+            <ul>
+                <li>Educación</li>
+                <li>Sistemas Alimentarios</li>
+                <li>Salud (Programas VIH, Malaria y Tuberculosis)</li>
+                <li>Gestión de Riesgos</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h4>4. Municipio San Cristóbal, Estado de Táchira <span class="document-link" onclick="toggleDocument('perfil-san-cristobal')">20240806_Avances del Grupo Interagencial de Nexo GIN.pdf (Diapositiva 11)</span></h4>
+            <div class="document-content" id="perfil-san-cristobal">
+                <p>Contenido del documento 20240806_Avances del Grupo Interagencial de Nexo GIN.pdf, Diapositiva 11</p>
+            </div>
+            <p>Personas alcanzadas: 14,8k</p>
+            <p>Organizaciones involucradas: OIM, PNUD, ACNUR, UNFPA, (ONUDI), OPS, unicef.</p>
+            <p>Sectores de intervención: [Información no proporcionada en el documento original]</p>
+        </div>
+
+        <div class="slide">
+            <h4>5. Municipio Guajira, Estado de Zulia <span class="document-link" onclick="toggleDocument('perfil-guajira')">20240806_Avances del Grupo Interagencial de Nexo GIN.pdf (Diapositiva 12)</span></h4>
+            <div class="document-content" id="perfil-guajira">
+                <p>Contenido del documento 20240806_Avances del Grupo Interagencial de Nexo GIN.pdf, Diapositiva 12</p>
+            </div>
+            <p>Personas alcanzadas: 16k</p>
+            <p>Organizaciones involucradas: FAO, OIM, ACNUR, PMA, UNICEF, UNFPA, (ONUDI), OPS, unicef.</p>
+            <p>Sectores de intervención:</p>
+            <ul>
+                <li>Educación</li>
+                <li>Sistemas Alimentarios</li>
+                <li>Salud (Programas VIH, Malaria y Tuberculosis)</li>
+                <li>Gestión de Riesgos</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h4>6. Municipio Urdaneta, Estado de Miranda</h4>
+            <p>Personas alcanzadas: 8672</p>
+            <p>Organizaciones involucradas: UNFPA, PNUD, UNICEF, ACNUR, OPS, unicef.</p>
+            <p>Sectores de intervención:</p>
+            <ul>
+                <li>Educación</li>
+                <li>Sistema Productivo</li>
+                <li>Salud (Programas VIH, Malaria y Tuberculosis)</li>
+                <li>Seguridad Ciudadana</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="Glosario" class="tabcontent">
+        <h2>📖 Glosario Básico</h2>
+
+        <div class="glossary-term">HDP Nexus</div>
+        <div class="glossary-definition">Enfoque que busca la colaboración entre actores Humanitarios, de Desarrollo y de Paz para lograr resultados colectivos.</div>
+
+        <div class="glossary-term">UNCT</div>
+        <div class="glossary-definition">Equipo de País de las Naciones Unidas (United Nations Country Team).</div>
+
+        <div class="glossary-term">HCT</div>
+        <div class="glossary-definition">Equipo Humanitario de País (Humanitarian Country Team).</div>
+
+        <div class="glossary-term">CCT</div>
+        <div class="glossary-definition">Equipo de Coordinación de Campo (Campo Coordination Team).</div>
+
+        <div class="glossary-term">OCHA</div>
+        <div class="glossary-definition">Oficina de Coordinación de Asuntos Humanitarios de las Naciones Unidas.</div>
+
+        <div class="glossary-term">PNUD</div>
+        <div class="glossary-definition">Programa de las Naciones Unidas para el Desarrollo.</div>
+
+        <div class="glossary-term">ACNUR</div>
+        <div class="glossary-definition">Alto Comisionado de las Naciones Unidas para los Refugiados.</div>
+
+        <div class="glossary-term">OIM</div>
+        <div class="glossary-definition">Organización Internacional para las Migraciones.</div>
+
+        <div class="glossary-term">CERF</div>
+        <div class="glossary-definition">Fondo Central de Respuesta a Emergencias (Central Emergency Response Fund).</div>
+
+        <div class="glossary-term">VHF</div>
+        <div class="glossary-definition">Fondo Humanitario de Venezuela (Venezuela Humanitarian Fund).</div>
+
+        <div class="glossary-term">HRP</div>
+        <div class="glossary-definition">Plan de Respuesta Humanitaria (Humanitarian Response Plan).</div>
+
+        <div class="glossary-term">5W</div>
+        <div class="glossary-definition">Herramienta de planificación que responde a las preguntas: Quién, Qué, Dónde, Cuándo y Por qué.</div>
+
+        <div class="glossary-term">Marco Lógico</div>
+        <div class="glossary-definition">Herramienta de gestión de proyectos que describe la lógica de un proyecto y sus componentes.</div>
+
+        <div class="glossary-term">Mapeo Offline</div>
+        <div class="glossary-definition">Método de recopilación de datos en áreas donde el acceso a internet es limitado.</div>
+
+        <div class="glossary-term">Triple Nexo</div>
+        <div class="glossary-definition">Enfoque que conecta la acción humanitaria, el desarrollo y la construcción de paz para dar una respuesta más integral y duradera a crisis complejas.</div>
+
+        <div class="glossary-term">Acción Humanitaria</div>
+        <div class="glossary-definition">Asistencia urgente para salvar vidas y aliviar el sufrimiento de poblaciones afectadas por crisis.</div>
+
+        <div class="glossary-term">Desarrollo</div>
+        <div class="glossary-definition">Proceso a largo plazo para mejorar las condiciones económicas, sociales y políticas de una comunidad o país.</div>
+
+        <div class="glossary-term">Construcción de Paz</div>
+        <div class="glossary-definition">Esfuerzos para prevenir conflictos, resolver disputas y fomentar estructuras que permitan una paz duradera.</div>
+
+        <div class="glossary-term">Localización</div>
+        <div class="glossary-definition">Proceso de dar mayor protagonismo y poder de decisión a actores locales en la respuesta humanitaria y de desarrollo.</div>
+
+        <div class="glossary-term">Resiliencia</div>
+        <div class="glossary-definition">Capacidad de individuos, comunidades o sistemas para resistir, adaptarse y recuperarse de crisis o perturbaciones.</div>
+
+        <div class="glossary-term">Vulnerabilidad</div>
+        <div class="glossary-definition">Grado en que una población está expuesta a riesgos y su capacidad para afrontarlos.</div>
+
+        <div class="glossary-term">Resultados Colectivos</div>
+        <div class="glossary-definition">Objetivos comunes acordados entre actores humanitarios, de desarrollo y de paz para reducir necesidades, riesgos y vulnerabilidades.</div>
+
+        <div class="glossary-term">Nueva Forma de Trabajar</div>
+        <div class="glossary-definition">Enfoque que busca superar la división entre actores humanitarios y de desarrollo para lograr resultados colectivos.</div>
+
+        <div class="glossary-term">Ventaja Comparativa</div>
+        <div class="glossary-definition">Capacidad y conocimientos demostrados de un actor en un área específica dentro del nexo.</div>
+
+        <div class="glossary-term">Programación Integrada</div>
+        <div class="glossary-definition">Diseño de intervenciones que combinan elementos humanitarios, de desarrollo y de paz.</div>
+
+        <div class="glossary-term">Financiación Flexible</div>
+        <div class="glossary-definition">Recursos que pueden adaptarse a diferentes contextos y necesidades dentro del nexo.</div>
+
+        <div class="glossary-term">Coherencia</div>
+        <div class="glossary-definition">Alineación de objetivos y acciones entre los diferentes actores del triple nexo.</div>
+
+        <div class="glossary-term">Principios Humanitarios</div>
+        <div class="glossary-definition">Humanidad, neutralidad, imparcialidad e independencia que guían la acción humanitaria.</div>
+
+        <div class="glossary-term">Enfoque Basado en Derechos</div>
+        <div class="glossary-definition">Perspectiva que integra los derechos humanos en la planificación y ejecución de programas.</div>
+
+        <div class="glossary-term">Sostenibilidad</div>
+        <div class="glossary-definition">Capacidad de mantener los beneficios de una intervención a largo plazo.</div>
+
+        <div class="glossary-term">Apropiación Local</div>
+        <div class="glossary-definition">Grado en que las comunidades locales lideran y se responsabilizan de los procesos de desarrollo y paz.</div>
+
+        <div class="glossary-term">Capacitación</div>
+        <div class="glossary-definition">Fortalecimiento de habilidades y conocimientos de actores locales para mejorar su respuesta a crisis.</div>
+
+        <div class="glossary-term">Coordinación Intersectorial</div>
+        <div class="glossary-definition">Colaboración entre diferentes sectores (salud, educación, etc.) para lograr objetivos comunes.</div>
+
+        <div class="glossary-term">Análisis de Contexto</div>
+        <div class="glossary-definition">Estudio detallado de la situación local para informar la toma de decisiones en el nexo.</div>
+
+        <div class="glossary-term">Prevención de Conflictos</div>
+        <div class="glossary-definition">Acciones para evitar el surgimiento o escalada de conflictos violentos.</div>
+
+        <div class="glossary-term">Transformación de Conflictos</div>
+        <div class="glossary-definition">Proceso de cambiar las relaciones, comportamientos y estructuras que perpetúan los conflictos.</div>
+
+        <div class="glossary-term">Rendición de Cuentas</div>
+        <div class="glossary-definition">Responsabilidad de los actores del nexo ante las poblaciones afectadas y los donantes.</div>
+
+        <div class="glossary-term">Participación Comunitaria</div>
+        <div class="glossary-definition">Involucramiento activo de las comunidades locales en todas las fases de los programas.</div>
+
+        <div class="glossary-term">Evaluación de Necesidades</div>
+        <div class="glossary-definition">Proceso para identificar y priorizar las necesidades de las poblaciones afectadas.</div>
+
+        <div class="glossary-term">Gestión Adaptativa</div>
+        <div class="glossary-definition">Enfoque flexible que permite ajustar las intervenciones según los cambios en el contexto.</div>
+
+        <div class="glossary-term">Cohesión Social</div>
+        <div class="glossary-definition">Fortalecimiento de las relaciones y la confianza entre diferentes grupos dentro de una comunidad.</div>
+
+        <div class="glossary-term">Recuperación Temprana</div>
+        <div class="glossary-definition">Acciones que conectan la respuesta humanitaria inmediata con esfuerzos de desarrollo a largo plazo.</div>
+
+        <div class="glossary-term">Sensibilidad al Conflicto</div>
+        <div class="glossary-definition">Consideración de cómo las intervenciones pueden afectar positiva o negativamente las dinámicas de conflicto.</div>
+
+        <div class="glossary-term">Nexo Humanitario-Desarrollo</div>
+        <div class="glossary-definition">Conexión entre la asistencia humanitaria a corto plazo y los objetivos de desarrollo a largo plazo.</div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Quiz data
+        const quizData = [
+            {
+                question: "¿El enfoque Nexus consiste principalmente en la coordinación de las Naciones Unidas?",
+                options: ["Sí", "No"],
+                correct: 1
+            },
+            {
+                question: "¿El Nexus es sólo una palabra de moda, los donantes no están realmente comprometidos?",
+                options: ["Sí", "Sí, pero", "No", "No, pero"],
+                correct: 2
+            },
+            {
+                question: "¿Un enfoque Nexus es una medida de ahorro?",
+                options: ["Sí", "Sí, pero hay costes iniciales", "Sólo en que nos hace más eficientes", "No"],
+                correct: 1
+            },
+            {
+                question: "Un enfoque nexo implica la fusión de la acción humanitaria, el desarrollo y la programación para la paz",
+                options: ["Sí", "Hasta cierto punto", "No"],
+                correct: 1
+            },
+            {
+                question: "La puesta en práctica del nexo consiste en aprovechar recursos financieros",
+                options: ["Hasta cierto punto", "No", "Sí"],
+                correct: 0
+            }
+        ];
+
+        // Function to generate quiz
+        function generateQuiz() {
+            const quizContainer = document.getElementById("quiz-container");
+            quizData.forEach((q, index) => {
+                const questionDiv = document.createElement("div");
+                questionDiv.classList.add("quiz-question");
+                questionDiv.innerHTML = `
+                    <p><strong>Pregunta ${index + 1}:</strong> ${q.question}</p>
+                    <div class="quiz-options" id="options-${index}"></div>
+                    <div class="quiz-feedback" id="feedback-${index}"></div>
+                `;
+                quizContainer.appendChild(questionDiv);
+
+                const optionsContainer = document.getElementById(`options-${index}`);
+                q.options.forEach((option, optionIndex) => {
+                    const button = document.createElement("button");
+                    button.classList.add("quiz-option");
+                    button.textContent = option;
+                    button.onclick = () => checkAnswer(index, optionIndex);
+                    optionsContainer.appendChild(button);
+                });
+            });
+        }
+
+        // Function to check answer
+        function checkAnswer(questionIndex, selectedOption) {
+            const feedbackDiv = document.getElementById(`feedback-${questionIndex}`);
+            const options = document.querySelectorAll(`#options-${questionIndex} .quiz-option`);
+            
+            options.forEach((option, index) => {
+                option.disabled = true;
+                if (index === quizData[questionIndex].correct) {
+                    option.classList.add("correct");
+                } else if (index === selectedOption) {
+                    option.classList.add("incorrect");
+                }
+            });
+
+            if (selectedOption === quizData[questionIndex].correct) {
+                feedbackDiv.textContent = "¡Correcto!";
+                feedbackDiv.style.color = "green";
+            } else {
+                feedbackDiv.textContent = "Incorrecto. La respuesta correcta está marcada en verde.";
+                feedbackDiv.style.color = "red";
+            }
+        }
+
+        // Function to toggle document content visibility
+        function toggleDocument(docId) {
+            const docContent = document.getElementById(docId);
+            docContent.style.display = docContent.style.display === "block" ? "none" : "block";
+        }
+
+        // Generate quiz when the page loads
+        window.onload = function() {
+            generateQuiz();
+            // Open the first tab by default
+            document.getElementsByClassName("tablinks")[0].click();
+        };
+    </script>
+</body>
+</html>
